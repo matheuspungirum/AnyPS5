@@ -1,4 +1,56 @@
+# Sobre
+
+> 🇧🇷 **Português (BR)** · [🇺🇸 English version below](#about)
+
+Ferramenta para portar executáveis automaticamente para Linux e Windows.
+
+A build apenas do relinker roda no macOS, incluindo Apple silicon.
+
+[**Conversor web**](https://boykopovar.github.io/AnyPS5/) - os arquivos ficam no seu dispositivo.
+
+![anyps5_collage1](https://github.com/user-attachments/assets/ed2f0b2d-33d3-46d7-ab88-767ca872fc99)
+
+Inclui um [relinker](core/relinker) que converte o executável para o formato nativo do sistema de destino e implementações das [bibliotecas prx do sistema](core/libs/prx) adequadas para linkagem dinâmica. Sem emulação e sem processo de runtime separado.
+
+[**Discord**](https://discord.gg/BHFztBPUe), [Uso](docs/user/USAGE.md), [Instruções de build](docs/dev/BUILD.md), [Arquitetura](docs/dev/ARCHITECTURE.md), [Débito técnico do projeto](docs/dev/TechnicalDebt.md), [convenções de estilo de código](docs/dev/CONVENTIONS.md), [como contribuir](CONTRIBUTING.md)
+
+## Status
+
+[![libraries](https://boykopovar.github.io/AnyPS5/badge-libraries.svg)](https://boykopovar.github.io/AnyPS5/progress.html) [![shaders](https://boykopovar.github.io/AnyPS5/badge-shaders.svg)](https://boykopovar.github.io/AnyPS5/progress.html)
+
+[![mapa de progresso](https://boykopovar.github.io/AnyPS5/progress.svg)](https://boykopovar.github.io/AnyPS5/progress.html)
+
+[Histórico de progresso](https://boykopovar.github.io/AnyPS5/history.html)
+
+<sub>* Bibliotecas do sistema: percentual das funções conhecidas pelo projeto até agora (declaradas em [core/libs/prx](core/libs/prx)), e não de todas as funções do sistema do PS5. O total cresce à medida que mais funções são declaradas.</sub>
+
+Estados não suportados ou inesperados lançam estritamente `std::runtime_error`. O `what()` é impresso no stderr e o processo é encerrado.
+
+O [recompilador de shaders](core/shader/recompiler/Recompiler.cpp) gera SPIR-V com sucesso (validado via [Spirv-Tools](3rdparty/SPIRV-Tools) quando compilado com `ANYPS5_ENABLE_SPIRV_TOOLS`).
+
+## Compatibilidade
+
+O progresso por jogo (etapa alcançada, bloqueios em aberto, cobertura de bibliotecas e de GPU) é acompanhado no [mapa de bloqueios](https://alxcbtw.github.io/anyps5-roadmap/), um projeto da comunidade construído a partir de dados públicos do GitHub ([código-fonte](https://github.com/AlxcBTW/anyps5-roadmap)). Relatórios de teste vão nas discussões de [Game bring-up](https://github.com/boykopovar/AnyPS5/discussions/categories/game-bring-up), um tópico por título.
+
+## Mapeamento de controles
+
+Controles mapeados via SDL são suportados, incluindo analógicos e gatilhos. Teclado e mouse podem ser configurados com um arquivo `anyps5-input.ini`. Veja [mapeamento de controles](docs/user/INPUT_MAPPING.md) para os dispositivos suportados e o formato de configuração.
+
+## Aviso legal
+
+Este projeto destina-se a fins de interoperabilidade, pesquisa, preservação e compatibilidade. Ele não inclui, distribui nem exige software, firmware, chaves criptográficas ou bibliotecas proprietárias protegidos por direitos autorais. Os usuários são responsáveis por garantir que quaisquer binários usados com este projeto sejam obtidos e utilizados de acordo com as leis aplicáveis e os respectivos termos de licença.
+
+O AnyPS5 é um projeto independente e não é afiliado, autorizado ou endossado pela Sony Interactive Entertainment. "PlayStation" e "PS5" são marcas registradas da Sony Interactive Entertainment Inc.
+
+## Licença
+
+Este projeto é licenciado sob a GNU General Public License, versão 2 apenas.
+
+---
+
 # About
+
+> 🇺🇸 **English (original)** · [🇧🇷 Versão em português acima](#sobre)
 
 Tool for automatic executables porting to Linux and Windows.
 
